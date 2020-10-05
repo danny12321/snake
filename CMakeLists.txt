@@ -11,5 +11,5 @@ conan_basic_setup()
 file(GLOB_RECURSE SOURCES src/*.cpp src/*.hpp)
 #file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
 
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} src/Grid.cpp src/Grid.h src/grid/SnakeBody.cpp src/grid/SnakeBody.h src/Game.cpp src/Game.h src/grid/Candy.cpp src/grid/Candy.h src/grid/GridItem.cpp src/grid/GridItem.h)
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} src/Grid.cpp src/Grid.h src/grid/SnakeBody.cpp src/grid/SnakeBody.h src/Game.cpp src/Game.h src/grid/Candy.cpp src/grid/Candy.h src/grid/GridItem.cpp src/grid/GridItem.h src/Directions.h)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${CONAN_LIBS})

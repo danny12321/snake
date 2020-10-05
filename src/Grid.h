@@ -6,33 +6,24 @@
 #define SNAKE_GRID_H
 
 #include <list>
+#include <vector>
 #include "grid/SnakeBody.h"
+#include  <random>
 
 class Grid {
 private:
     SDL_Renderer* _renderer;
 
-    enum Direction {LEFT, RIGHT, UP, DOWN };
-    Direction currdirection = RIGHT;
+    void DrawBody(GridItem* body);
 
-    SnakeBody* _head;
-    SnakeBody* _tail;
-
-    void DrawBody(SnakeBody* body);
-
-    int columns = 30;
-    int rows = 30;
+    int columns = 20;
+    int rows = 20;
 
 public:
     Grid(SDL_Renderer* renderer);
-    void Draw();
+    void Draw(GridItem *body);
 
-    void HandleInput(SDL_Event& event);
-    void Update();
-
-    void Eat();
-
-    bool HasCrashed();
+    std::vector<int> GetFreePlace(GridItem* body);
 };
 
 
